@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div x-data="{ /* Alpine.js data and methods */ }" class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold mb-4">{{ graph.title }}</h1>
+    <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+        <div class="px-4 py-5 sm:px-6">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                Graph Information
+            </h3>
+        </div>
+        <div class="border-t border-gray-200">
+            <dl>
+                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">
+                        Data Endpoint
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                        {{ graph.data_endpoint }}
+                    </dd>
+                </div>
+                <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                    <dt class="text-sm font-medium text-gray-500">
+                        Graph Type
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                        {{ graph.graph_type }}
+                    </dd>
+                </div>
+                <!-- Insert additional graph details here -->
+            </dl>
+        </div>
+    </div>
+    <!-- Placeholder for the graph visualization (e.g., using Plotly) -->
+    <div id="graph-visualization" class="mt-8">
+        <!-- Graph visualization goes here -->
+    </div>
+</div>
+{% endblock %}

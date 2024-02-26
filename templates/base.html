@@ -80,18 +80,31 @@
         <button
           class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center"
         >
-          <i class="fas fa-plus mr-3"></i> New Graph
+          <a href="/graphs/create">
+            <i class="fas fa-plus mr-3"></i> New Graph
+          </a>
         </button>
       </div>
+      <nav class="text-white text-base font-semibold pt-3">
+        <a
+          href="/graphs"
+          class="flex items-center active-nav-link text-white py-4 pl-6 nav-item"
+        >
+          <i class="fas fa-tachometer-alt mr-3"></i>
+          Graphs List
+        </a>
+      </nav>
     </aside>
 
     <div class="w-full flex flex-col h-screen overflow-y-hidden">
       <!-- Headers and additional content structure -->
-      {% comment %} <header
+      {% comment %}
+      <header
         class="w-full items-center bg-white py-2 px-6 hidden sm:flex dark:bg-gray-900"
       >
         <!-- Adapted header content here -->
-      </header> {% endcomment %}
+      </header>
+      {% endcomment %}
 
       <main class="w-full flex-grow p-6">
         {% block content %}

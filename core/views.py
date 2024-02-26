@@ -1,8 +1,9 @@
+# core/views.py
 from django.shortcuts import render
 import requests
 import plotly.graph_objs as go
 from plotly.offline import plot
-
+from django.shortcuts import render
 
 def data_sources(request):
     return render(request, "data_sources.html")
