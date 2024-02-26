@@ -1,12 +1,12 @@
-    <!DOCTYPE html>
-<html>
-<head>
-    <title>AlphaVantage Graph</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-</head>
-<body>
-    <h1>Stock Data from AlphaVantage</h1>
-    <!-- Display the Plotly graph -->
-    <div>{{ plot_div|safe }}</div>
-</body>
-</html>
+{% extends "base.html" %} {% block content %}
+<h1 class="text-3xl text-black pb-6">Stock Data from AlphaVantage</h1>
+<!-- Display the Plotly graph -->
+<div>{{ plot_div|safe }}</div>
+
+<!-- Url to the API -->
+<button
+  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+>
+  <a target="_blank" href="{{ url }}"> API URL </a>
+</button>
+{% endblock %}

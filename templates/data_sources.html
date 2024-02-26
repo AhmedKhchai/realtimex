@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<div class="pt-8 px-8">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+  >
+    <!-- Example Card 1 -->
+    <div class="max-w-md w-full bg-white rounded-lg shadow-md dark:bg-gray-800 p-4">
+      <div class="p-6">
+        <h2 class="text-lg font-bold text-gray-800 dark:text-white">
+          AlphaVantage Graphs
+        </h2>
+        <p class="mt-4 text-gray-600 dark:text-gray-400">
+          Click to view various financial graphs from AlphaVantage.
+        </p>
+        <div class="mt-6">
+          <a
+            href="{% url 'alphavantage' %}"
+            class="inline-block w-full bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded transition duration-200"
+          >
+            View Graphs
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Example Card 2 (duplicate as needed for more cards) -->
+    <!-- You can duplicate the above card structure for each new card you want to add -->
+  </div>
+</div>
+{% endblock %}

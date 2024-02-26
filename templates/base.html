@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realtimex Dashboard</title>
+    <meta name="author" content="Your Name" />
+    <meta name="description" content="Realtimex Admin Dashboard" />
+
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+      .font-family-karla {
+        font-family: karla;
+      }
+      .bg-sidebar {
+        background: #3d68ff;
+      }
+      .cta-btn {
+        color: #3d68ff;
+      }
+      .upgrade-btn {
+        background: #1947ee;
+      }
+      .upgrade-btn:hover {
+        background: #0038fd;
+      }
+      .active-nav-link {
+        background: #1947ee;
+      }
+      .nav-item:hover {
+        background: #1947ee;
+      }
+      .account-link:hover {
+        background: #3d68ff;
+      }
+      /* Additional styles for dark mode */
+      .dark:bg-sidebar {
+        background: #1e40af;
+      }
+      .dark:bg-gray-100 {
+        background: #2d3748;
+      }
+      .dark:text-gray-200 {
+        color: #e2e8f0;
+      }
+    </style>
+
+    <!-- Alpine.js for interactivity -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- Plotly.js for advanced charting -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- ChartJS for simpler charts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font Awesome for icons -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+      integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-gray-100 font-family-karla flex dark:bg-gray-800">
+    <!-- Sidebar, header, and content structure adapted from your new template -->
+    <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
+      <!-- Sidebar content from the new template -->
+      <div class="p-6">
+        <a
+          href="/"
+          class="text-white text-3xl font-semibold uppercase hover:text-gray-300"
+          >Realtimex</a
+        >
+        <button
+          class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center"
+        >
+          <i class="fas fa-plus mr-3"></i> New Graph
+        </button>
+      </div>
+    </aside>
+
+    <div class="w-full flex flex-col h-screen overflow-y-hidden">
+      <!-- Headers and additional content structure -->
+      {% comment %} <header
+        class="w-full items-center bg-white py-2 px-6 hidden sm:flex dark:bg-gray-900"
+      >
+        <!-- Adapted header content here -->
+      </header> {% endcomment %}
+
+      <main class="w-full flex-grow p-6">
+        {% block content %}
+        <!-- Dynamic content goes here -->
+        {% endblock %}
+      </main>
+
+      <footer class="w-full bg-white text-right p-4 dark:bg-gray-900">
+        <p>© 2024 Realtimex. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <!-- Dark mode toggle script adapted for the new structure -->
+    <script>
+      document.documentElement.classList.add(
+        localStorage.getItem('theme') || 'dark'
+      );
+      window.toggleTheme = function () {
+        document.documentElement.classList.toggle('dark');
+        localStorage.setItem(
+          'theme',
+          document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+        );
+      };
+    </script>
+  </body>
+</html>
